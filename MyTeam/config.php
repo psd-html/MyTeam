@@ -122,7 +122,9 @@ if(!empty($_POST)) {
 
 	                    <tbody>
 	                        <?php for($i=1; $i<=$nbmembres; $i++) {?>
+
 	                        <?php $nom = $plxPlugin->getParam(nom.$i);
+
 	                        if(!empty($nom)) { ?>
 	                        
 	                        <tr class="line-<?php echo $i%2 ?>">
@@ -151,13 +153,16 @@ if(!empty($_POST)) {
 	                            </td>
 
 	                            <td>
-	                            	<?php if (empty($plxPlugin->getParam(avatar.$i))) {?>
 
-	                            		<img src="<?php echo PLX_PLUGINS ?>MyTeam/APP/noavatar.png" alt="logo" height="64" width="64">
+	                            	<?php $avatar = $plxPlugin->getParam(avatar.$i);
 
+	                            	if (!empty($avatar)) {?>
+
+						<img src="<?php echo $plxPlugin->getParam(avatar.$i) ?>" alt="avatar" height="64" width="64">
+	                            		
 	                            	<?php }else{ ?>
 
-										<img src="<?php echo $plxPlugin->getParam(avatar.$i) ?>" alt="avatar" height="64" width="64">
+	                            		<img src="<?php echo PLX_PLUGINS ?>MyTeam/APP/noavatar.png" alt="logo" height="64" width="64">
 	                            		
 	                                <?php } ?>
 	                            </td>	
@@ -167,7 +172,9 @@ if(!empty($_POST)) {
 	                            </td>
 	                        </tr>
 	                            <?php }; ?>
+
 	                                <?php }; ?>
+
 	                    </tbody>
 
 	                </table>
@@ -265,4 +272,6 @@ if(!empty($_POST)) {
         $('#tabby-1').tabby();
     });
 </script>	
+
+
 
