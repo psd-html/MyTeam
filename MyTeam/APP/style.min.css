@@ -1,0 +1,29 @@
+
+.membre{
+	width: 33%;
+	float: left;
+	text-align: center;
+}
+.membre .info{
+	margin: 20px 40px;
+	background: #fff;
+	padding: 10px;
+	border-radius: 10px;
+	border: 3px solid #000;
+	color: #000!important;
+}
+.membre .info h3{
+	margin: 20px 40px;
+	border-radius: 10px;
+	border: 3px solid #000;
+	color: #000!important;
+}
+.membre .info>img{width: 128px;height: 128px}
+.membre .info .fonction{font-weight: bold;}
+
+@media handheld, only screen and (max-width: 1000px){
+	.membre{width: 50%}
+}
+@media handheld, only screen and (max-width: 700px){
+	.membre{width: 100%}
+}
