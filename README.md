@@ -2,7 +2,7 @@ MyTeam
 =========
 Plugin pour créer et afficher une page équipe
 
-Compatible avec la version 5.3.1
+Compatible avec la version 5.5
 
 Pages admin
 =========
