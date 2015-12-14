@@ -1,3 +1,6 @@
-<?php if(!defined('PLX_ROOT')) exit; ?>
+<?php 
 
-<?php global $plxShow; eval($plxShow->callHook("MyTeam")); ?>
+	if(!defined('PLX_ROOT')) exit; 
+	global $plxShow; eval($plxShow->callHook("MyTeam")); 
+
+?>

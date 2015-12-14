@@ -52,7 +52,7 @@ class MyTeam extends plxPlugin {
                                             
                                         <?php } ?>
 
-                                <p>Mail:<?php echo $mail; ?></p>
+                                <p>Mail: <?php echo $mail; ?></p>
                             </div>
                             
                         </div>
