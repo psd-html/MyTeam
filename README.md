@@ -11,4 +11,6 @@ Pages admin
 
 ![Alt text](http://nextum.fr/myteam2.jpg)
 
+Plugin visible à cette adresse: http://nextum.fr/team
+
 N'hésitez pas à me contacter sur http://nextum.fr
