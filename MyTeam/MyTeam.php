@@ -20,6 +20,12 @@ class MyTeam extends plxPlugin {
     } 
 
     public function MyTeam(){
+
+            $info = $this->getParam('mnuInfo');
+
+            if(!empty($info)){
+                echo '<p>'. $info .'</p>';//info haut de page
+            }
         
             $nb_membres = floor(sizeof($this->aParams)/6); // nombre de champs
             $nb_membres = $nb_membres + 1;

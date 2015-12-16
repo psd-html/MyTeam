@@ -9,6 +9,7 @@ if(!empty($_POST)) {
 	# configuration de la page 
 	if (!empty($_POST['mnuDisplay']) AND !empty($_POST['mnuName']) AND !empty($_POST['mnuPos']) AND !empty($_POST['template']))  {
 
+		$plxPlugin->setParam('mnuInfo', $_POST['mnuInfo'], 'cdata');
 		$plxPlugin->setParam('mnuDisplay', $_POST['mnuDisplay'], 'numeric');
 		$plxPlugin->setParam('mnuName', $_POST['mnuName'], 'cdata');
 		$plxPlugin->setParam('mnuPos', $_POST['mnuPos'], 'numeric');
@@ -234,6 +235,11 @@ if(!empty($_POST)) {
 	<div data-tab="tab3">
 
 		<form action="parametres_plugin.php?p=MyTeam" method="post">
+
+				<p>
+					<label for="mnuInfo">Texte en haut de page:</label>
+					<textarea id="mnuInfo" rows="5"  name="mnuInfo"><? echo $plxPlugin->getParam('mnuInfo'); ?></textarea>
+				</p>
 
 				<p>
 					<label for="mnuDisplay">Afficher la page dans la navigation:</label>
