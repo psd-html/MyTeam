@@ -6,6 +6,7 @@ plxToken::validateFormToken($_POST);
 $nbmembres = floor(sizeof($plxPlugin->getParams())/6);
 if(!empty($_POST)) {
 
+
 	# configuration de la page 
 	if (!empty($_POST['mnuDisplay']) AND !empty($_POST['mnuName']) AND !empty($_POST['mnuPos']) AND !empty($_POST['template']))  {
 
@@ -14,6 +15,8 @@ if(!empty($_POST)) {
 		$plxPlugin->setParam('mnuName', $_POST['mnuName'], 'cdata');
 		$plxPlugin->setParam('mnuPos', $_POST['mnuPos'], 'numeric');
 		$plxPlugin->setParam('template', $_POST['template'], 'string');
+		$plxPlugin->setParam('champs1', $_POST['champs1'], 'string');
+		$plxPlugin->setParam('champs2', $_POST['champs2'], 'string');
 		$plxPlugin->saveParams();
 	}
 
@@ -114,8 +117,8 @@ if(!empty($_POST)) {
 	                            <th>Nom</th>
 	                            <th>Prénom</th>
 	                            <th>Fonction</th>
-	                            <th>Téléphone</th>
-	                            <th>E-mail</th>
+	                            <th><? echo $plxPlugin->getParam('champs1'); ?></th>
+	                            <th><? echo $plxPlugin->getParam('champs2'); ?></th>
 	                            <th>Avatar</th>
 	                            <th class="checkbox">Effacer</th>
 	                        </tr>
@@ -191,7 +194,9 @@ if(!empty($_POST)) {
 
 	<div data-tab="tab2">
 
+
 		    <form action="parametres_plugin.php?p=MyTeam" method="post">
+
 		        <p>
 		            <label for="nom">Nom (Champ obligatoire)</label>
 		             <input type="text" name="nom-new" value="" />
@@ -208,13 +213,13 @@ if(!empty($_POST)) {
 		        </p>
 
 		        <p>
-		            <label for="fonction">Téléphone</label>
-		            <input type="text" name="telephone-new" value="" />
+		            <label for="label1"><?= $label1 = empty($plxPlugin->getParam('champs1')) ? 'Info 1' : $plxPlugin->getParam('champs1'); ?></label>
+		            <input type="text" name="label1" value="" />
 		        </p>
 
 		        <p>
-		            <label for="mail">E-mail</label>
-		            <input type="text" name="mail-new" value="" />
+		            <label for="label2"><?= $label1 = empty($plxPlugin->getParam('champs2')) ? 'Info 2' : $plxPlugin->getParam('champs2'); ?></label>
+		            <input type="text" name="label2" value="" />
 		        </p>
 
 		        <p>
@@ -237,28 +242,38 @@ if(!empty($_POST)) {
 		<form action="parametres_plugin.php?p=MyTeam" method="post">
 
 				<p>
-					<label for="mnuInfo">Texte en haut de page:</label>
+					<label for="mnuInfo">Texte en haut de page</label>
 					<textarea id="mnuInfo" rows="5"  name="mnuInfo"><? echo $plxPlugin->getParam('mnuInfo'); ?></textarea>
 				</p>
 
 				<p>
-					<label for="mnuDisplay">Afficher la page dans la navigation:</label>
+		            <label for="champs1">Info 1</label>
+		             <input type="text" name="champs1" value="<? echo $plxPlugin->getParam('champs1'); ?>" />
+		        </p>
+		        
+		        <p>
+		            <label for="champs2">Info 2</label>
+		             <input type="text" name="champs2" value="<? echo $plxPlugin->getParam('champs2'); ?>" />
+		        </p>
+
+				<p>
+					<label for="mnuDisplay">Afficher la page dans la navigation</label>
 					<select name="mnuDisplay" id="mnuDisplay">
 						<option value="1"  <?php if ($mnuDisplay == '1') { echo'selected';}?> >Oui</option>
 						<option value="0" <?php if ($mnuDisplay == '0') { echo'selected';}?> >Non</option>
 					</select>
 
 				<p>
-					<label for="mnuName">Titre de la page:</label>
+					<label for="mnuName">Titre de la page</label>
 					<input id="mnuName" name="mnuName"  maxlength="255" value="<?php echo $plxPlugin->getParam("mnuName"); ?>">
 				</p>
 				<p>
-					<label for="mnuPos">Position de la page:</label>
+					<label for="mnuPos">Position de la page</label>
 					<input id="mnuPos" name="mnuPos"  maxlength="255" value="<?php echo $plxPlugin->getParam("mnuPos"); ?>">
 				</p>
 
 				<p>
-					<label for="template">Template de votre page:</label>
+					<label for="template">Template de votre page</label>
 					<?php plxUtils::printSelect('template', $aTemplates, $template) ?>
 				</p>
 
@@ -269,7 +284,8 @@ if(!empty($_POST)) {
 			</p>
 
 		</form>
-	</div>	
+	</div>
+	
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="<?php echo PLX_PLUGINS ?>MyTeam/APP/jquery.tabby.js"></script>

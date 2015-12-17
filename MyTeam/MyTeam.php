@@ -38,27 +38,28 @@ class MyTeam extends plxPlugin {
                 $telephone = $this->getParam('telephone'.$i);
                 $avatar = $this->getParam('avatar'.$i);
                 $mail = $this->getParam('mail'.$i);
-
+                $label1 = $this->getParam('champs1');
+                $label2 = $this->getParam('champs2');
 
                 if(!empty($nom)) { 
                     ?>
                         <div class="membre">
                             <div class="info">
-                                <h3><?php echo $nom; ?><br><?php echo $prenom; ?></h3>
-                                <p class="fonction"><?php echo $fonction;?></p>
-                                <p>Tél: <?php echo $telephone;?></p>
+                                <h3><?php echo $nom; ?><br><?= $prenom; ?></h3>
+                                <p class="fonction"><?= $fonction;?></p>
+                                <p><?= $label1.$telephone;?></p>
 
                                 <?php if (empty($avatar)) {?>
 
-                                            <img src="<?php echo PLX_PLUGINS ?>MyTeam/APP/noavatar.png" alt="logo">
+                                            <img src="<?= PLX_PLUGINS ?>MyTeam/APP/noavatar.png" alt="logo">
 
                                         <?php }else{ ?>
 
-                                            <img src="<?php echo $avatar; ?>" alt="avatar">
+                                            <img src="<?= $avatar; ?>" alt="avatar">
                                             
                                         <?php } ?>
 
-                                <p>Mail: <?php echo $mail; ?></p>
+                                <p><?= $label2.$mail; ?></p>
                             </div>
                             
                         </div>
