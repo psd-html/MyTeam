@@ -66,6 +66,8 @@ if(!empty($_POST)) {
 	$mnuName =  $plxPlugin->getParam('mnuName')=='' ? 'MyTeam' : $plxPlugin->getParam('mnuName');
 	$mnuPos =  $plxPlugin->getParam('mnuPos')=='' ? 2 : $plxPlugin->getParam('mnuPos');
 	$template = $plxPlugin->getParam('template')=='' ? 'static.php' : $plxPlugin->getParam('template');
+	$label1 = $plxPlugin->getParam('champs1')=='' ? 'Info 1' : $plxPlugin->getParam('champs1');
+	$label2 = $plxPlugin->getParam('champs2')=='' ? 'Info 2' : $plxPlugin->getParam('champs2');
 
 	# On récupère les templates des pages statiques
 	$files = plxGlob::getInstance(PLX_ROOT.'themes/'.$plxAdmin->aConf['style']);
@@ -213,13 +215,13 @@ if(!empty($_POST)) {
 		        </p>
 
 		        <p>
-		            <label for="label1"><?= $label1 = empty($plxPlugin->getParam('champs1')) ? 'Info 1' : $plxPlugin->getParam('champs1'); ?></label>
-		            <input type="text" name="label1" value="" />
+		            <label for="label1"><?= $label1; ?></label>
+		            <input type="text" name="telephone-new" value="" />
 		        </p>
 
 		        <p>
-		            <label for="label2"><?= $label1 = empty($plxPlugin->getParam('champs2')) ? 'Info 2' : $plxPlugin->getParam('champs2'); ?></label>
-		            <input type="text" name="label2" value="" />
+		            <label for="label2"><?= $label2;  ?></label>
+		            <input type="text" name="mail-new" value="" />
 		        </p>
 
 		        <p>
