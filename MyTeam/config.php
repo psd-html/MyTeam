@@ -249,12 +249,12 @@ if(!empty($_POST)) {
 				</p>
 
 				<p>
-		            <label for="champs1">Info 1</label>
+		            <label for="champs1">Titre du champs 1</label>
 		             <input type="text" name="champs1" value="<? echo $plxPlugin->getParam('champs1'); ?>" />
 		        </p>
 		        
 		        <p>
-		            <label for="champs2">Info 2</label>
+		            <label for="champs2">Titre du champs 2</label>
 		             <input type="text" name="champs2" value="<? echo $plxPlugin->getParam('champs2'); ?>" />
 		        </p>
 
