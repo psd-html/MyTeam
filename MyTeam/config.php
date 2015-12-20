@@ -244,8 +244,8 @@ if(!empty($_POST)) {
 		<form action="parametres_plugin.php?p=MyTeam" method="post">
 
 				<p>
-					<label for="mnuInfo">Texte en haut de page</label>
-					<textarea id="mnuInfo" rows="5"  name="mnuInfo"><? echo $plxPlugin->getParam('mnuInfo'); ?></textarea>
+					<label for="id_content">Texte en haut de page</label>
+					<textarea id="id_content" rows="5"  name="mnuInfo"><? echo $plxPlugin->getParam('mnuInfo'); ?></textarea>
 				</p>
 
 				<p>
