@@ -28,10 +28,10 @@ class MyTeam extends plxPlugin {
             }
         
             $nb_membres = floor(sizeof($this->aParams)/6); // nombre de champs
-            $nb_membres = $nb_membres + 1;
+
 
         
-            for($i=1; $i<$nb_membres; $i++) { // boucle pour afficher les membres
+            for($i=$nb_membres; $i>0; $i--) { // boucle pour afficher les membres
                 $nom = $this->getParam('nom'.$i);
                 $prenom = $this->getParam('prenom'.$i);
                 $fonction = $this->getParam('fonction'.$i);
