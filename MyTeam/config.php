@@ -119,8 +119,8 @@ if(!empty($_POST)) {
 	                            <th>Nom</th>
 	                            <th>Prénom</th>
 	                            <th>Fonction</th>
-	                            <th><? echo $plxPlugin->getParam('champs1'); ?></th>
-	                            <th><? echo $plxPlugin->getParam('champs2'); ?></th>
+	                            <th><?= $plxPlugin->getParam('champs1'); ?></th>
+	                            <th><?= $plxPlugin->getParam('champs2'); ?></th>
 	                            <th>Avatar</th>
 	                            <th class="checkbox">Effacer</th>
 	                        </tr>
@@ -139,23 +139,23 @@ if(!empty($_POST)) {
 	                            </td>
 	                            
 	                            <td>
-	                                <input type="text"  name="nom<?php echo $i; ?>" value="<?php echo $plxPlugin->getParam(nom.$i) ?>" />
+	                                <input type="text"  name="nom<?php echo $i; ?>" value="<?= $plxPlugin->getParam(nom.$i) ?>" />
 	                            </td>
 	                            
 	                            <td>
-	                            	<input type="text"  name="prenom<?php echo $i; ?>" value="<?php echo $plxPlugin->getParam(prenom.$i) ?>" />
+	                            	<input type="text"  name="prenom<?php echo $i; ?>" value="<?= $plxPlugin->getParam(prenom.$i) ?>" />
 	                            </td>
 	                            
 	                            <td>
-	                                <input type="text" name="fonction<?php echo $i; ?>" value="<?php echo $plxPlugin->getParam(fonction.$i) ?>" />
+	                                <input type="text" name="fonction<?php echo $i; ?>" value="<?= $plxPlugin->getParam(fonction.$i) ?>" />
 	                            </td>
 
 	                            <td>
-	                                <input type="text" name="telephone<?php echo $i; ?>" value="<?php echo $plxPlugin->getParam(telephone.$i) ?>" />
+	                                <input type="text" name="telephone<?php echo $i; ?>" value="<?= $plxPlugin->getParam(telephone.$i) ?>" />
 	                            </td>
 
 	                            <td>
-	                                <input type="text" name="mail<?php echo $i; ?>" value="<?php echo $plxPlugin->getParam(mail.$i) ?>" />
+	                                <input type="text" name="mail<?php echo $i; ?>" value="<?= $plxPlugin->getParam(mail.$i) ?>" />
 	                            </td>
 
 	                            <td>
@@ -164,17 +164,17 @@ if(!empty($_POST)) {
 
 	                            	if (!empty($avatar)) {?>
 
-						<img src="<?php echo $plxPlugin->getParam(avatar.$i) ?>" alt="avatar" height="64" width="64">
+						<img src="<?= $plxPlugin->getParam(avatar.$i) ?>" alt="avatar" height="64" width="64">
 	                            		
 	                            	<?php }else{ ?>
 
-	                            		<img src="<?php echo PLX_PLUGINS ?>MyTeam/APP/noavatar.png" alt="logo" height="64" width="64">
+	                            		<img src="<?= PLX_PLUGINS ?>MyTeam/APP/noavatar.png" alt="logo" height="64" width="64">
 	                            		
 	                                <?php } ?>
 	                            </td>	
 	                            
 	                            <td class="checkbox">
-	                                <input type="checkbox" name="delete<?php echo $i; ?>" value="1">
+	                                <input type="checkbox" name="delete<?= $i; ?>" value="1">
 	                            </td>
 	                        </tr>
 	                            <?php }; ?>
@@ -245,17 +245,17 @@ if(!empty($_POST)) {
 
 				<p>
 					<label for="id_content">Texte en haut de page</label>
-					<textarea id="id_content" rows="5"  name="mnuInfo"><? echo $plxPlugin->getParam('mnuInfo'); ?></textarea>
+					<textarea id="id_content" rows="5"  name="mnuInfo"><?= $plxPlugin->getParam('mnuInfo'); ?></textarea>
 				</p>
 
 				<p>
 		            <label for="champs1">Titre du champs 1</label>
-		             <input type="text" name="champs1" value="<? echo $plxPlugin->getParam('champs1'); ?>" />
+		             <input type="text" name="champs1" value="<?= $plxPlugin->getParam('champs1'); ?>" />
 		        </p>
 		        
 		        <p>
 		            <label for="champs2">Titre du champs 2</label>
-		             <input type="text" name="champs2" value="<? echo $plxPlugin->getParam('champs2'); ?>" />
+		             <input type="text" name="champs2" value="<?= $plxPlugin->getParam('champs2'); ?>" />
 		        </p>
 
 				<p>
@@ -267,11 +267,11 @@ if(!empty($_POST)) {
 
 				<p>
 					<label for="mnuName">Titre de la page</label>
-					<input id="mnuName" name="mnuName"  maxlength="255" value="<?php echo $plxPlugin->getParam("mnuName"); ?>">
+					<input id="mnuName" name="mnuName"  maxlength="255" value="<?= $plxPlugin->getParam("mnuName"); ?>">
 				</p>
 				<p>
 					<label for="mnuPos">Position de la page</label>
-					<input id="mnuPos" name="mnuPos"  maxlength="255" value="<?php echo $plxPlugin->getParam("mnuPos"); ?>">
+					<input id="mnuPos" name="mnuPos"  maxlength="255" value="<?= $plxPlugin->getParam("mnuPos"); ?>">
 				</p>
 
 				<p>
