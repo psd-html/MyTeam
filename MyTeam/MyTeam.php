@@ -45,21 +45,21 @@ class MyTeam extends plxPlugin {
                     ?>
                         <div class="membre">
                             <div class="info">
-                                <h3><?php echo $nom; ?><br><?= $prenom; ?></h3>
-                                <p class="fonction"><?= $fonction;?></p>
-                                <p><?= $label1.$telephone;?></p>
+                                <h3><?php echo $nom; ?><br><?php echo $prenom; ?></h3>
+                                <p class="fonction"><?php echo $fonction;?></p>
+                                <p><?php echo $label1.$telephone;?></p>
 
                                 <?php if (empty($avatar)) {?>
 
-                                            <img src="<?= PLX_PLUGINS ?>MyTeam/APP/noavatar.png" alt="logo">
+                                            <img src="<?php echo PLX_PLUGINS ?>MyTeam/APP/noavatar.png" alt="logo">
 
                                         <?php }else{ ?>
 
-                                            <img src="<?= $avatar; ?>" alt="avatar">
+                                            <img src="<?php echo $avatar; ?>" alt="avatar">
                                             
                                         <?php } ?>
 
-                                <p><?= $label2.$mail; ?></p>
+                                <p><?php echo $label2.$mail; ?></p>
                             </div>
                             
                         </div>
