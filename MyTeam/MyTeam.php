@@ -45,9 +45,9 @@ class MyTeam extends plxPlugin {
                     ?>
                         <div class="membre">
                             <div class="info">
-                                <h3><?php echo $nom; ?><br><?php echo $prenom; ?></h3>
-                                <p class="fonction"><?php echo $fonction;?></p>
-                                <p><?php echo $label1.$telephone;?></p>
+                                <h3><?php echo plxUtils::strCheck($nom) ?><br><?php echo plxUtils::strCheck($prenom) ?></h3>
+                                <p class="fonction"><?php echo plxUtils::strCheck($fonction) ?></p>
+                                <p><?php echo plxUtils::strCheck($label1).plxUtils::strCheck($telephone)?></p>
 
                                 <?php if (empty($avatar)) {?>
 
@@ -55,11 +55,11 @@ class MyTeam extends plxPlugin {
 
                                         <?php }else{ ?>
 
-                                            <img src="<?php echo $avatar; ?>" alt="avatar">
+                                            <img src="<?php echo plxUtils::strCheck($avatar) ?>" alt="avatar">
                                             
                                         <?php } ?>
 
-                                <p><?php echo $label2.$mail; ?></p>
+                                <p><?php echo plxUtils::strCheck($label2).plxUtils::strCheck($mail) ?></p>
                             </div>
                             
                         </div>
