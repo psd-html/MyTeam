@@ -162,9 +162,11 @@ if(!empty($_POST)) {
 
 	                            	<?php $avatar = $plxPlugin->getParam(avatar.$i);
 
+
 	                            	if (!empty($avatar)) {?>
 
-						<img src="<?php echo $plxPlugin->getParam(avatar.$i) ?>" alt="avatar" height="64" width="64">
+
+									<img src="<?php echo  PLX_ROOT.$plxPlugin->getParam(avatar.$i) ?>" alt="avatar" height="64" width="64">
 	                            		
 	                            	<?php }else{ ?>
 
@@ -225,9 +227,12 @@ if(!empty($_POST)) {
 		        </p>
 
 		        <p>
-		            <label for="avatar">Avatar (ex: http://monsite.fr/data/medias/avatar.png)</label>
-		            <input type="text" name="avatar-new" value="" />
-		        </p>                                                                  
+					<label for="avtar">Avatar
+					<a id="toggler_thumbnail" href="javascript:void(0)" onclick="mediasManager.openPopup('avatar-new', true)">+</a>
+					</label>
+
+					<input id="avatar-new" name="avatar-new"  maxlength="255" value="<?php echo plxUtils::strCheck($plxPlugin->getParam("avatar-new")) ?>">
+				</p>                                                                 
 		                       
 		        <p class="in-action-bar">
 		            <?php echo plxToken::getTokenPostMethod() ?>
@@ -296,6 +301,7 @@ if(!empty($_POST)) {
         $('#tabby-1').tabby();
     });
 </script>	
+
 
 
 
