@@ -11,6 +11,8 @@ Pages admin
 
 ![Alt text](http://nextum.fr/myteam2.jpg)
 
+![Alt text](http://nextum.fr/teamV2.png)
+
 Plugin visible à cette adresse: http://nextum.fr/team
 
 N'hésitez pas à me contacter sur http://nextum.fr
