@@ -44,6 +44,7 @@ if(!empty($_POST)) {
                 $plxPlugin->setParam('fonction'.$i, plxUtils::strCheck($_POST['fonction'.$i]), 'cdata');
                 $plxPlugin->setParam('telephone'.$i, plxUtils::strCheck($_POST['telephone'.$i]), 'cdata');
                 $plxPlugin->setParam('mail'.$i, plxUtils::strCheck($_POST['mail'.$i]), 'cdata');
+                $plxPlugin->setParam('avatar'.$i, plxUtils::strCheck($_POST['avatar'.$i]), 'cdata');
                 $plxPlugin->saveParams();
             
             }elseif($_POST['delete'.$i] == "1"){
@@ -161,18 +162,19 @@ if(!empty($_POST)) {
 	                            <td>
 
 	                            	<?php $avatar = $plxPlugin->getParam(avatar.$i);
-
-
+	                            	
 	                            	if (!empty($avatar)) {?>
 
 
-									<img src="<?php echo  PLX_ROOT.$plxPlugin->getParam(avatar.$i) ?>" alt="avatar" height="64" width="64">
+									<a id="toggler_thumbnail" href="javascript:void(0)" onclick="mediasManager.openPopup('avatar<?php echo $i; ?>', true)"><img src="<?php echo  PLX_ROOT.$plxPlugin->getParam(avatar.$i) ?>" alt="avatar" height="64" width="64"></a>
 	                            		
 	                            	<?php }else{ ?>
 
-	                            		<img src="<?php echo PLX_PLUGINS ?>MyTeam/APP/noavatar.png" alt="logo" height="64" width="64">
+	                            		<a id="toggler_thumbnail" href="javascript:void(0)" onclick="mediasManager.openPopup('avatar<?php echo $i; ?>', true)"><img src="<?php echo PLX_PLUGINS ?>MyTeam/APP/noavatar.png" alt="logo" height="64" width="64"></a>
 	                            		
 	                                <?php } ?>
+
+	                                <input style="display:none" type="text" id="avatar<?php echo $i; ?>" name="avatar<?php echo $i; ?>" value="<?php echo $plxPlugin->getParam(avatar.$i) ?>" />
 	                            </td>	
 	                            
 	                            <td class="checkbox">
@@ -227,7 +229,7 @@ if(!empty($_POST)) {
 		        </p>
 
 		        <p>
-					<label for="avtar">Avatar
+					<label for="avatar">Avatar
 					<a id="toggler_thumbnail" href="javascript:void(0)" onclick="mediasManager.openPopup('avatar-new', true)">+</a>
 					</label>
 
