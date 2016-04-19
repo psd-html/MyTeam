@@ -166,11 +166,11 @@ if(!empty($_POST)) {
 	                            	if (!empty($avatar)) {?>
 
 
-									<a id="toggler_thumbnail" href="javascript:void(0)" onclick="mediasManager.openPopup('avatar<?php echo $i; ?>', true)"><img src="<?php echo  PLX_ROOT.$plxPlugin->getParam(avatar.$i) ?>" alt="avatar" height="64" width="64"></a>
+					<a id="toggler_thumbnail" href="javascript:void(0)" onclick="mediasManager.openPopup('avatar<?php echo $i; ?>', true)"><img src="<?php echo  PLX_ROOT.$plxPlugin->getParam(avatar.$i) ?>" alt="avatar" height="64" width="64"></a>
 	                            		
 	                            	<?php }else{ ?>
 
-	                            		<a id="toggler_thumbnail" href="javascript:void(0)" onclick="mediasManager.openPopup('avatar<?php echo $i; ?>', true)"><img src="<?php echo PLX_PLUGINS ?>MyTeam/APP/noavatar.png" alt="logo" height="64" width="64"></a>
+	                               <a id="toggler_thumbnail" href="javascript:void(0)" onclick="mediasManager.openPopup('avatar<?php echo $i; ?>', true)"><img src="<?php echo PLX_PLUGINS ?>MyTeam/APP/noavatar.png" alt="logo" height="64" width="64"></a>
 	                            		
 	                                <?php } ?>
 
