@@ -89,7 +89,7 @@ class MyTeam extends plxPlugin {
         $string  = "if(\$this->plxMotor->mode=='team') {";
         $string .= "    \$array = array();";
         $string .= "    \$array[\$this->plxMotor->cible] = array(
-            'name'      => '".$this->getParam('mnuName')."',
+            'name'      => '".addslashes($this->getParam('mnuName'))."',
             'menu'      => '',
             'url'       => 'team',
             'readable'  => 1,
