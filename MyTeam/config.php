@@ -94,8 +94,6 @@ if(!empty($_POST)) {
 
 
 
-<form action="parametres_plugin.php?p=MyTeam" method="post">
-
 	<!-- navigation sur la page configuration du plugin -->
 	<nav id="tabby-1" class="tabby-tabs" data-for="example-tab-content">
 		<ul>
@@ -111,7 +109,7 @@ if(!empty($_POST)) {
 	<div data-tab="tab1">
 		<div class="formulaire">
 	        <!-- membres déja créés -->
-	        <form action="parametres_plugin.php?p=Testimonials" method="post">
+	        <form action="parametres_plugin.php?p=MyTeam" method="post">
 	            <fieldset>
 	                <table class="full-width">
 	                    <thead>
